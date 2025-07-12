@@ -383,7 +383,7 @@ public class HTMLScanner implements Scanner, Locator {
 	public void scan(Reader r0, ScanHandler h) throws IOException, SAXException {
 		theState = S_PCDATA;
 		PushbackReader r;
-		if (r0 instanceof BufferedReader) {
+		if (r0 instanceof BufferedReader || r0 instanceof StringReader) {
 			r = new PushbackReader(r0, 5);
 			}
 		else {
